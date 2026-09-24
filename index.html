@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <section>
+        <div id="cadastro">
+            <p>Nome do produto</p>
+            <input type="text" id="nomeProdutoTxt">
+            <p>Quantidade</p>
+            <input type="text" id="quantidadeTxt">
+            <p>Preço unitário</p>
+            <input type="text" id="precoTxt">
+            <input type="button" value="ADICIONAR PRODUTO" onclick="add()">
+        </div>
+        <div id="estoque">
+            <table id="tabela">
+            </table>
+        </div>
+        <div id="resumo">
+
+        </div>
+        <div id="busca">
+            <p>Busca</p>
+            <input type="text" id="busca">
+            <input type="button" value="Buscar">
+        </div>
+    </section>
 </body>
 <script src="script.js"></script>
+
 </html>
