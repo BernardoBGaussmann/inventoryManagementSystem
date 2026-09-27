@@ -73,7 +73,7 @@ section {
 }
 /* Adicione esta regra no seu style.css */
 #cadastro {
-    height: 550px;       /* Ajuste este valor em pixels para o tamanho desejado */
+    height: 565px;       /* Ajuste este valor em pixels para o tamanho desejado */
     align-self: start;   /* Impede o Grid de esticar ou encolher a caixa */
 }
 
