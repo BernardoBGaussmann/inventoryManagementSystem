@@ -34,18 +34,19 @@
                         <th>Quantidade</th>
                         <th>Preço</th>
                         <th>Total</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody id="tabelaCorpo"></tbody>
             </table>
         </div>
         <div id="busca">
-            <h2><i class="fa-solid fa-magnifying-glass"></i> REMOÇÃO E BUSCA</h2>
+            <h2><i class="fa-solid fa-magnifying-glass"></i> REMOVER ITEM</h2>
             <div class="search-box">
-                <input type="text" id="inputBusca" placeholder="Buscar por ID ou Nome">
+                <input type="text" id="inputBusca" placeholder="Apagar por ID">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <input type="button" value="BUSCAR">
+            <input type="button" value="APAGAR" onclick="apagarItem()">
         </div>
     </section>
 </body>
