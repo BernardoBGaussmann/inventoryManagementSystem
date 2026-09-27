@@ -1,0 +1,200 @@
+:root {
+    --bg-main: #dbe7e4;        /* Fundo verde/azul pastel */
+    --card-bg: #ffffff;       /* Fundo branco das divs */
+    --text-color: #2c3e50;
+    --text-muted: #7f8c8d;
+    --primary-green: #34a853; /* Verde do botão adicionar */
+    --input-bg: #edf2f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    padding: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* HEADER SUPERIOR */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.top-bar h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #3c4043;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-bar h1 span {
+    color: #70757a;
+    font-weight: 600;
+}
+
+.badge {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+/* ORGANIZAÇÃO DA TAG <SECTION> EM GRID (2 COLUNAS) */
+section {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-areas: 
+        "cadastro estoque"
+        "cadastro busca";
+    gap: 1.2rem;
+}
+
+/* ESTILO DOS CARDS (#cadastro, #estoque, #resumo, #busca) */
+#cadastro, #estoque, #resumo, #busca {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+/* Adicione esta regra no seu style.css */
+#cadastro {
+    height: 550px;       /* Ajuste este valor em pixels para o tamanho desejado */
+    align-self: start;   /* Impede o Grid de esticar ou encolher a caixa */
+}
+
+/* Mapeamento dos IDs nas áreas do Grid */
+#cadastro { grid-area: cadastro; }
+#estoque  { grid-area: estoque; }
+#resumo   { grid-area: resumo; }
+#busca    { grid-area: busca; }
+
+/* TÍTULOS DENTRO DAS DIVS */
+h2 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* FORMULÁRIO DE CADASTRO (#cadastro) */
+#cadastro p {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+#cadastro p span {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+#cadastro input[type="text"] {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: 1px solid #dadce0;
+    padding: 0.65rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+#cadastro input[type="button"] {
+    width: 100%;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-top: 1.2rem;
+}
+
+/* CONTAINER DA TABELA COM ROLAGEM (#estoque) */
+#estoque {
+    max-height: 380px;     /* Limita a altura para ~10 itens */
+    overflow-y: auto;      /* Ativa a barra de rolagem quando passar da altura */
+}
+
+#estoque table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;   /* Mantém a largura das colunas perfeitamente alinhadas */
+    text-align: left;
+}
+
+/* FIXA O CABEÇALHO NO TOPO AO ROLAR */
+#estoque thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--card-bg);
+    z-index: 2;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #3c4043;
+    border-bottom: 2px solid #f1f3f4;
+}
+
+#estoque td {
+    padding: 0.75rem 0.6rem;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #f1f3f4;
+    word-wrap: break-word;
+}
+
+/* BUSCA (#busca) */
+.search-box {
+    position: relative;
+    margin-bottom: 0.8rem;
+}
+
+.search-box input {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: 1px solid #dadce0;
+    padding: 0.65rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.search-box i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+#busca input[type="button"] {
+    width: 100%;
+    background-color: #f1f3f4;
+    color: #3c4043;
+    border: 1px solid #dadce0;
+    padding: 0.65rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
