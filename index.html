@@ -20,7 +20,16 @@
             <input type="button" value="ADICIONAR PRODUTO" onclick="add()">
         </div>
         <div id="estoque">
-            <table id="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaCorpo"></tbody>
             </table>
         </div>
         <div id="resumo">
