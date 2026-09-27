@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header class="top-bar">
+        <h1><i class="fa-solid fa-box-open"></i>SISTEMA DE ESTOQUE - <span>BERNARDO GAUSSMANN</span></h1>
+    </header>
     <section>
         <div id="cadastro">
+            <h2><i class="fa-solid fa-user-check"></i> CADASTRAR PRODUTO</h2>
             <p>Nome do produto</p>
             <input type="text" id="nomeProdutoTxt">
             <p>Quantidade</p>
@@ -20,9 +25,11 @@
             <input type="button" value="ADICIONAR PRODUTO" onclick="add()">
         </div>
         <div id="estoque">
+            <h2><i class="fa-solid fa-boxes-stacked"></i> PRODUTOS EM ESTOQUE</h2>
             <table>
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Produto</th>
                         <th>Quantidade</th>
                         <th>Preço</th>
@@ -32,13 +39,13 @@
                 <tbody id="tabelaCorpo"></tbody>
             </table>
         </div>
-        <div id="resumo">
-
-        </div>
         <div id="busca">
-            <p>Busca</p>
-            <input type="text" id="busca">
-            <input type="button" value="Buscar">
+            <h2><i class="fa-solid fa-magnifying-glass"></i> REMOÇÃO E BUSCA</h2>
+            <div class="search-box">
+                <input type="text" id="inputBusca" placeholder="Buscar por ID ou Nome">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input type="button" value="BUSCAR">
         </div>
     </section>
 </body>
