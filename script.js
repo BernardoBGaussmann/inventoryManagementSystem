@@ -6,6 +6,7 @@ let quantidadeTxt = document.getElementById('quantidadeTxt')
 let precoTxt = document.getElementById('precoTxt')
 let produtos = []
 
+
 function add() {
     let idDate = Date.now()
     let idFinal = String(idDate).slice(-4)
@@ -37,4 +38,16 @@ function atualizarTabela() {
         </tr>`
     }
 
+}
+
+function apagarItem(){
+    let inputBusca = document.getElementById('inputBusca')
+    for(let i = 0; i < produtos.length; i++){
+        if (produtos[i].id == inputBusca.value){
+            produtos.splice(i, 1)
+            atualizarTabela()
+            inputBusca.value = ""
+            window.alert("Produto removido")
+        }
+    }
 }
