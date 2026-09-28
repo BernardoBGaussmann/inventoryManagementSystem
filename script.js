@@ -6,6 +6,22 @@ let quantidadeTxt = document.getElementById('quantidadeTxt')
 let precoTxt = document.getElementById('precoTxt')
 let produtos = []
 
+function verificarRep() {
+    let encontrouRepetido = false
+    
+    for (let repetidos of produtos) {
+        if (repetidos.name == nomeProdutoTxt.value) {
+            encontrouRepetido = true
+        } else {
+            encontrouRepetido = false
+        }
+    } if (encontrouRepetido == false) {
+        atualizarTabela()
+        add()
+    } else {
+        window.alert('Item já cadastrado!')
+    }
+}
 
 function add() {
     let idDate = Date.now()
@@ -19,10 +35,11 @@ function add() {
         price: precoNum,
         subtotal: quantidadeNum * precoNum
     }
-    if(nomeProdutoTxt.value.length != 0){
-    produtos.push(productObject)
-    atualizarTabela()
-    } else {window.alert("Informações faltando")}
+    
+    if (nomeProdutoTxt.value.length != 0) {
+        produtos.push(productObject)
+        atualizarTabela()
+    } else { window.alert("Informações faltando") }
 }
 
 function atualizarTabela() {
@@ -37,13 +54,13 @@ function atualizarTabela() {
         <td>${item.subtotal}</td>
         </tr>`
     }
-
 }
 
-function apagarItem(){
+function apagarItem() {
     let inputBusca = document.getElementById('inputBusca')
-    for(let i = 0; i < produtos.length; i++){
-        if (produtos[i].id == inputBusca.value){
+    
+    for (let i = 0; i < produtos.length; i++) {
+        if (produtos[i].id == inputBusca.value) {
             produtos.splice(i, 1)
             atualizarTabela()
             inputBusca.value = ""
