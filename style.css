@@ -1,13 +1,3 @@
-:root {
-    --bg: #dbe7e4;
-    --card: #fff;
-    --text: #2c3e50;
-    --muted: #7f8c8d;
-    --green: #34a853;
-    --input: #edf2f7;
-    --border: #dadce0;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -19,77 +9,41 @@ body {
     max-width: 1100px;
     margin: auto;
     padding: 1.5rem;
-    background: var(--bg);
-    color: var(--text);
+    background: #dbe7e4;
+    color: #2c3e50;
 }
 
-.top-bar {
-    margin-bottom: 1.2rem;
-}
-
-.top-bar h1 {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    font-size: 1.2rem;
-}
-
-.top-bar span {
-    color: #70757a;
-}
+.top-bar { margin-bottom: 1.2rem; }
+.top-bar h1, h2 { display: flex; align-items: center; gap: .5rem; }
+.top-bar h1 { font-size: 1.2rem; }
+.top-bar span { color: #70757a; }
 
 section {
     display: grid;
     grid-template-columns: 320px 1fr;
-    grid-template-areas:
-        "cadastro estoque"
-        "cadastro busca";
+    grid-template-areas: "cadastro estoque" "cadastro busca";
     gap: 1.2rem;
 }
 
-#cadastro,
-#estoque,
-#busca {
+#cadastro, #estoque, #busca {
     padding: 1.2rem;
-    background: var(--card);
+    background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, .03);
 }
 
-#cadastro {
-    grid-area: cadastro;
-    height: 565px;
-}
+#cadastro { grid-area: cadastro; height: 565px; }
+#estoque { grid-area: estoque; max-height: 380px; overflow-y: auto; }
+#busca { grid-area: busca; }
 
-#estoque {
-    grid-area: estoque;
-    max-height: 380px;
-    overflow-y: auto;
-}
-
-#busca {
-    grid-area: busca;
-}
-
-h2 {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    margin-bottom: 1rem;
-    font-size: .9rem;
-}
-
-#cadastro p {
-    margin: .8rem 0 .3rem;
-    font-size: .8rem;
-    font-weight: 700;
-}
+h2 { margin-bottom: 1rem; font-size: .9rem; }
+#cadastro p { margin: .8rem 0 .3rem; font-size: .8rem; font-weight: 700; }
 
 input[type="text"] {
     width: 100%;
     padding: .65rem .8rem;
-    background: var(--input);
-    border: 1px solid var(--border);
+    background: #edf2f7;
+    border: 1px solid #dadce0;
     border-radius: 8px;
     outline: none;
 }
@@ -103,48 +57,13 @@ input[type="button"] {
     cursor: pointer;
 }
 
-#cadastro input[type="button"] {
-    margin-top: 1.2rem;
-    background: var(--green);
-    color: white;
-}
+#cadastro input[type="button"] { margin-top: 1.2rem; background: #34a853; color: #fff; }
 
-#estoque table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
+#estoque table { width: 100%; border-collapse: collapse; text-align: left; }
+#estoque th, #estoque td { padding: .6rem; border-bottom: 1px solid #f1f3f4; font-size: .85rem; }
+#estoque th { position: sticky; top: 0; background: #fff; border-bottom-width: 2px; font-size: .8rem; }
 
-#estoque th {
-    position: sticky;
-    top: 0;
-    padding: .6rem;
-    background: var(--card);
-    border-bottom: 2px solid #f1f3f4;
-    font-size: .8rem;
-}
+.search-box { position: relative; margin-bottom: .8rem; }
+.search-box i { position: absolute; top: 50%; right: 12px; transform: translateY(-50%); color: #7f8c8d; }
 
-#estoque td {
-    padding: .75rem .6rem;
-    border-bottom: 1px solid #f1f3f4;
-    font-size: .85rem;
-}
-
-.search-box {
-    position: relative;
-    margin-bottom: .8rem;
-}
-
-.search-box i {
-    position: absolute;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-    color: var(--muted);
-}
-
-#busca input[type="button"] {
-    background: #f1f3f4;
-    color: #3c4043;
-    border: 1px solid var(--border);
-}
+#busca input[type="button"] { background: #f1f3f4; color: #3c4043; border: 1px solid #dadce0; }
