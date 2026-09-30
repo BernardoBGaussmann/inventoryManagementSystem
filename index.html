@@ -22,7 +22,7 @@
             <input type="text" id="quantidadeTxt">
             <p>Preço unitário</p>
             <input type="text" id="precoTxt">
-            <input type="button" value="ADICIONAR PRODUTO" onclick="verificarRep()">
+            <input type="button" value="ADICIONAR PRODUTO" id="botaoAdicionar">
         </div>
         <div id="estoque">
             <h2><i class="fa-solid fa-boxes-stacked"></i> PRODUTOS EM ESTOQUE</h2>
@@ -45,10 +45,10 @@
                 <input type="text" id="inputBusca" placeholder="Apagar por ID">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <input type="button" value="APAGAR" onclick="apagarItem()">
+            <input type="button" value="APAGAR" id="botaoApagar">
         </div>
     </section>
 </body>
-<script src="script.js"></script>
+<script type="module" src="js/main.js"></script>
 
 </html>
