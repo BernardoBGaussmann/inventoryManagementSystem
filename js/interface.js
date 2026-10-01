@@ -1,4 +1,6 @@
 let tb = document.getElementById('tabelaCorpo')
+let totalItens = document.getElementById('totalItens')
+let valorTotal = document.getElementById('valorTotal')
 
 export function atualizarTabela(produtos) {
     tb.innerHTML = ''
@@ -12,4 +14,9 @@ export function atualizarTabela(produtos) {
         <td>${item.subtotal}</td>
         </tr>`
     }
+}
+
+export function atualizarStats(qtdItens, total){
+    totalItens.innerHTML = qtdItens
+    valorTotal.innerHTML = `R$${total.toFixed(2)}`
 }
