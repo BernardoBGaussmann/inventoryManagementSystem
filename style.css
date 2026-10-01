@@ -21,23 +21,35 @@ body {
 section {
     display: grid;
     grid-template-columns: 320px 1fr;
-    grid-template-areas: "cadastro estoque" "cadastro busca";
+    grid-template-areas:
+        "cadastro estoque"
+        "estatisticas estoque"
+        "estatisticas busca";
     gap: 1.2rem;
 }
 
-#cadastro, #estoque, #busca {
+#cadastro, #estatisticas, #estoque, #busca {
     padding: 1.2rem;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, .03);
 }
+#cadastro { 
+    grid-area: cadastro; 
+    height: auto; 
+    padding: .9rem 1rem; 
+}
 
-#cadastro { grid-area: cadastro; height: 565px; }
+#estatisticas { grid-area: estatisticas; }
 #estoque { grid-area: estoque; max-height: 380px; overflow-y: auto; }
 #busca { grid-area: busca; }
 
 h2 { margin-bottom: 1rem; font-size: .9rem; }
+
+#cadastro h2 { margin-bottom: .5rem; }
 #cadastro p { margin: .8rem 0 .3rem; font-size: .8rem; font-weight: 700; }
+#cadastro input[type="text"] { padding: .45rem .6rem; }
+#cadastro input[type="button"] { margin-top: .8rem; padding: .55rem; background: #34a853; color: #fff; }
 
 input[type="text"] {
     width: 100%;
@@ -55,6 +67,12 @@ input[type="button"] {
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
+}
+
+#estatisticas p {
+    margin-top: .6rem;
+    font-size: .85rem;
+    font-weight: 700;
 }
 
 #cadastro input[type="button"] { margin-top: 1.2rem; background: #34a853; color: #fff; }
