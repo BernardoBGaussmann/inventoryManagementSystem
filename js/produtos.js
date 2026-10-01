@@ -1,5 +1,3 @@
-//import { atualizarTabela } from "./interface.js"
-
 export let produtos = []
 
 export function verificarRep() {
@@ -53,4 +51,18 @@ export function apagarItem() {
             break
         }
     }
+}
+
+export function stats(){
+    let qtdItens = produtos.length
+    return qtdItens
+}
+
+export function valor(){
+   let total = 0
+   for (let produto of produtos){
+    total += produto.subtotal
+   }
+   console.log(total)
+   return total
 }
